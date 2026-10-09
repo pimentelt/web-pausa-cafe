@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Monte seu pedido no cardápio da Pausa Café.">
+    <title>Pedidos | Pausa Café</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+    <header id="top">
+        <h2>PAUSA CAFÉ</h2>
+        <nav aria-label="Navegação principal">
+            <a href="index.html#top">Início</a>
+            <a href="index.html#menu">Cardápio</a>
+            <a href="index.html#about">Sobre</a>
+            <a href="index.html#contact">Contato</a>
+        </nav>
+        <a class="button" href="#pedido">Meu pedido</a>
+    </header>
+
+    <main class="order-page">
+        <section class="order-intro">
+            <p>ESCOLHA SEUS FAVORITOS</p>
+            <h1>Faça seu pedido</h1>
+            <span>Adicione os itens ao seu pedido e confira o resumo ao lado.</span>
+        </section>
+
+        <p class="dietary-legend">Selos identificam opções veganas ou vegetarianas e receitas sem glúten; avisos apontam a presença de glúten ou lactose.</p>
+
+        <section class="order-service" aria-labelledby="service-title">
+            <h2 id="service-title">Como você prefere receber?</h2>
+            <div class="service-options">
+                <label class="service-option">
+                    <input type="radio" name="service-mode" value="local">
+                    <span><strong>Consumir aqui</strong><small>Vamos preparar seu pedido para a mesa.</small></span>
+                </label>
+                <label class="service-option">
+                    <input type="radio" name="service-mode" value="retirada">
+                    <span><strong>Retirar para levar</strong><small>Seu pedido fica pronto no balcão.</small></span>
+                </label>
+                <label class="service-option">
+                    <input type="radio" name="service-mode" value="entrega">
+                    <span><strong>Entrega</strong><small>Receba seu pedido em casa.</small></span>
+                </label>
+            </div>
+
+            <div class="delivery-fields" id="delivery-fields" hidden>
+                <h3>Endereço para entrega</h3>
+                <div class="delivery-inputs">
+                    <label>
+                        Nome do cliente
+                        <input type="text" name="customer-name" autocomplete="name" data-delivery-required>
+                    </label>
+                    <label>
+                        CEP
+                        <input type="text" name="delivery-cep" inputmode="numeric" autocomplete="postal-code" placeholder="00000-000" maxlength="9" pattern="[0-9]{5}-?[0-9]{3}" title="Digite um CEP válido, como 01234-567" data-delivery-required>
+                    </label>
+                    <label>
+                        Rua e número
+                        <input type="text" name="delivery-address" autocomplete="street-address" data-delivery-required>
+                    </label>
+                    <label>
+                        Bairro
+                        <input type="text" name="delivery-neighborhood" autocomplete="address-level3" data-delivery-required>
+                    </label>
+                    <label>
+                        Complemento (opcional)
+                        <input type="text" name="delivery-complement" autocomplete="address-line2">
+                    </label>
+                </div>
+            </div>
+        </section>
+
+        <div class="order-layout">
+            <div class="order-categories">
+                <section class="order-category" aria-labelledby="hot-drinks-title">
+                    <h2 id="hot-drinks-title">Bebidas quentes</h2>
+                    <div class="order-products">
+                        <article class="order-product"><div class="order-product-info"><h3>Café Espresso</h3><p class="product-description">Dose de café espresso, extraída na hora.</p><div class="product-notes"><span class="vegan">Vegano</span></div></div><div class="product-action"><strong class="product-price">R$ 7,50</strong><button type="button" class="add-order-item" data-item="Café Espresso" data-price="7.50">Adicionar</button></div></article>
+                        <article class="order-product"><div class="order-product-info"><h3>Café Americano</h3><p class="product-description">Espresso servido com água quente.</p><div class="product-notes"><span class="vegan">Vegano</span></div></div><div class="product-action"><strong class="product-price">R$ 8,00</strong><button type="button" class="add-order-item" data-item="Café Americano" data-price="8.00">Adicionar</button></div></article>
+                        <article class="order-product"><div class="order-product-info"><h3>Café Latte</h3><p class="product-description">Espresso com leite vaporizado e uma camada cremosa de espuma.</p><div class="product-notes"><span class="contains-lactose">Contém lactose</span><span class="vegetarian">Vegetariano</span></div></div><div class="product-action"><strong class="product-price">R$ 10,00</strong><button type="button" class="add-order-item" data-item="Café Latte" data-price="10.00">Adicionar</button></div></article>
+                        <article class="order-product"><div class="order-product-info"><h3>Cappuccino</h3><p class="product-description">Espresso, leite vaporizado e toque de cacau.</p><div class="product-notes"><span class="contains-lactose">Contém lactose</span><span class="vegetarian">Vegetariano</span></div></div><div class="product-action"><strong class="product-price">R$ 13,00</strong><button type="button" class="add-order-item" data-item="Cappuccino" data-price="13.00">Adicionar</button></div></article>
+                        <article class="order-product"><div class="order-product-info"><h3>Mocha</h3><p class="product-description">Espresso com chocolate e leite vaporizado.</p><div class="product-notes"><span class="contains-lactose">Contém lactose</span><span class="vegetarian">Vegetariano</span></div></div><div class="product-action"><strong class="product-price">R$ 15,00</strong><button type="button" class="add-order-item" data-item="Mocha" data-price="15.00">Adicionar</button></div></article>
+                        <article class="order-product"><div class="order-product-info"><h3>Chocolate Quente</h3><p class="product-description">Leite aquecido com chocolate e uma camada de espuma cremosa.</p><div class="product-notes"><span class="contains-lactose">Contém lactose</span><span class="vegetarian">Vegetariano</span></div></div><div class="product-action"><strong class="product-price">R$ 14,00</strong><button type="button" class="add-order-item" data-item="Chocolate Quente" data-price="14.00">Adicionar</button></div></article>
+                    </div>
+                </section>
+
+                <section class="order-category" aria-labelledby="cold-drinks-title">
+                    <h2 id="cold-drinks-title">Bebidas geladas</h2>
+                    <div class="order-products">
+                        <article class="order-product"><div class="order-product-info"><h3>Frappuccino de Café</h3><p class="product-description">Café batido com leite, gelo e calda de café.</p><div class="product-notes"><span class="contains-lactose">Contém lactose</span><span class="vegetarian">Vegetariano</span></div></div><div class="product-action"><strong class="product-price">R$ 17,00</strong><button type="button" class="add-order-item" data-item="Frappuccino de Café" data-price="17.00">Adicionar</button></div></article>
+                        <article class="order-product"><div class="order-product-info"><h3>Frappé de Chocolate</h3><p class="product-description">Bebida gelada batida com leite e chocolate.</p><div class="product-notes"><span class="contains-lactose">Contém lactose</span><span class="vegetarian">Vegetariano</span></div></div><div class="product-action"><strong class="product-price">R$ 18,00</strong><button type="button" class="add-order-item" data-item="Frappé de Chocolate" data-price="18.00">Adicionar</button></div></article>
+                        <article class="order-product"><div class="order-product-info"><h3>Limonada Gelada</h3><p class="product-description">Limão espremido, água e gelo.</p><div class="product-notes"><span class="vegan">Vegano</span></div></div><div class="product-action"><strong class="product-price">R$ 10,00</strong><button type="button" class="add-order-item" data-item="Limonada Gelada" data-price="10.00">Adicionar</button></div></article>
+                        <article class="order-product"><div class="order-product-info"><h3>Chá Gelado de Pêssego</h3><p class="product-description">Chá-preto gelado com pêssego e um toque de limão.</p><div class="product-notes"><span class="vegan">Vegano</span></div></div><div class="product-action"><strong class="product-price">R$ 12,00</strong><button type="button" class="add-order-item" data-item="Chá Gelado de Pêssego" data-price="12.00">Adicionar</button></div></article>
+                        <article class="order-product"><div class="order-product-info"><h3>Smoothie de Frutas</h3><p class="product-description">Mix de frutas batido com gelo e suco de laranja.</p><div class="product-notes"><span class="vegan">Vegano</span></div></div><div class="product-action"><strong class="product-price">R$ 18,00</strong><button type="button" class="add-order-item" data-item="Smoothie de Frutas" data-price="18.00">Adicionar</button></div></article>
+                        <article class="order-product"><div class="order-product-info"><h3>Água Mineral</h3><p class="product-description">Água mineral servida gelada, com ou sem gás.</p><div class="product-notes"><span class="vegan">Vegano</span></div></div><div class="product-action"><strong class="product-price">R$ 5,50</strong><button type="button" class="add-order-item" data-item="Água Mineral" data-price="5.50">Adicionar</button></div></article>
+                        <article class="order-product"><div class="order-product-info"><h3>Suco de Laranja</h3><p class="product-description">Suco preparado na hora com laranjas frescas.</p><div class="product-notes"><span class="vegan">Vegano</span></div></div><div class="product-action"><strong class="product-price">R$ 10,00</strong><button type="button" class="add-order-item" data-item="Suco de Laranja" data-price="10.00">Adicionar</button></div></article>
+                        <article class="order-product"><div class="order-product-info"><h3>Refrigerante</h3><p class="product-description">Lata gelada. Consulte os sabores e ingredientes disponíveis.</p></div><div class="product-action"><strong class="product-price">R$ 7,00</strong><button type="button" class="add-order-item" data-item="Refrigerante" data-price="7.00">Adicionar</button></div></article>
+                        <article class="order-product"><div class="order-product-info"><h3>Soda Italiana</h3><p class="product-description">Água com gás, xarope de frutas e gelo.</p><div class="product-notes"><span class="vegan">Vegano</span></div></div><div class="product-action"><strong class="product-price">R$ 16,00</strong><button type="button" class="add-order-item" data-item="Soda Italiana" data-price="16.00">Adicionar</button></div></article>
+                    </div>
+                </section>
+
+                <section class="order-category" aria-labelledby="savory-title">
+                    <h2 id="savory-title">Sanduíches & salgados</h2>
+                    <div class="order-products">
+                        <article class="order-product"><div class="order-product-info"><h3>Natural de Presunto</h3><p class="product-description">Pão integral, presunto, queijo, alface e tomate.</p><div class="product-notes"><span class="contains-gluten">Contém glúten</span><span class="contains-lactose">Contém lactose</span></div></div><div class="product-action"><strong class="product-price">R$ 14,00</strong><button type="button" class="add-order-item" data-item="Natural de Presunto" data-price="14.00">Adicionar</button></div></article>
+                        <article class="order-product"><div class="order-product-info"><h3>Natural de Frango</h3><p class="product-description">Pão integral, frango desfiado, creme de ricota e folhas.</p><div class="product-notes"><span class="contains-gluten">Contém glúten</span><span class="contains-lactose">Contém lactose</span></div></div><div class="product-action"><strong class="product-price">R$ 15,00</strong><button type="button" class="add-order-item" data-item="Natural de Frango" data-price="15.00">Adicionar</button></div></article>
+                        <article class="order-product"><div class="order-product-info"><h3>Natural de Pão Sírio</h3><p class="product-description">Pão sírio, queijo branco, tomate e folhas frescas.</p><div class="product-notes"><span class="contains-gluten">Contém glúten</span><span class="contains-lactose">Contém lactose</span><span class="vegetarian">Vegetariano</span></div></div><div class="product-action"><strong class="product-price">R$ 17,00</strong><button type="button" class="add-order-item" data-item="Natural de Pão Sírio" data-price="17.00">Adicionar</button></div></article>
+                        <article class="order-product"><div class="order-product-info"><h3>Salgados Assados</h3><p class="product-description">Salgado assado do dia, com massa leve e recheio cremoso de frango.</p><div class="product-notes"><span class="contains-gluten">Contém glúten</span><span class="contains-lactose">Pode conter lactose</span></div></div><div class="product-action"><strong class="product-price">R$ 9,00</strong><button type="button" class="add-order-item" data-item="Salgados Assados" data-price="9.00">Adicionar</button></div></article>
+                        <article class="order-product"><div class="order-product-info"><h3>Salgados Fritos</h3><p class="product-description">Salgado frito do dia, com massa crocante e recheio de frango.</p><div class="product-notes"><span class="contains-gluten">Contém glúten</span></div></div><div class="product-action"><strong class="product-price">R$ 8,00</strong><button type="button" class="add-order-item" data-item="Salgados Fritos" data-price="8.00">Adicionar</button></div></article>
+                        <article class="order-product"><div class="order-product-info"><h3>Pão de Queijo</h3><p class="product-description">Porção de pãezinhos de queijo preparados com polvilho e queijo.</p><div class="product-notes"><span class="contains-lactose">Contém lactose</span><span class="vegetarian">Vegetariano</span></div></div><div class="product-action"><strong class="product-price">R$ 8,00</strong><button type="button" class="add-order-item" data-item="Pão de Queijo" data-price="8.00">Adicionar</button></div></article>
+                        <article class="order-product"><div class="order-product-info"><h3>Coxinha de Jaca sem Glúten</h3><p class="product-description">Massa de mandioca com recheio temperado de jaca desfiada.</p><div class="product-notes"><span class="vegan">Vegano</span><span class="gluten-free">Sem glúten</span></div></div><div class="product-action"><strong class="product-price">R$ 14,00</strong><button type="button" class="add-order-item" data-item="Coxinha de Jaca sem Glúten" data-price="14.00">Adicionar</button></div></article>
+                        <article class="order-product"><div class="order-product-info"><h3>Empada de Palmito sem Glúten</h3><p class="product-description">Massa de farinha de grão-de-bico com recheio de palmito e ervas.</p><div class="product-notes"><span class="vegan">Vegano</span><span class="gluten-free">Sem glúten</span></div></div><div class="product-action"><strong class="product-price">R$ 12,00</strong><button type="button" class="add-order-item" data-item="Empada de Palmito sem Glúten" data-price="12.00">Adicionar</button></div></article>
+                    </div>
+                </section>
+
+                <section class="order-category" aria-labelledby="sweets-title">
+                    <h2 id="sweets-title">Doces & outros</h2>
+                    <div class="order-products">
+                        <article class="order-product"><div class="order-product-info"><h3>Brigadeiro</h3><p class="product-description">Doce de chocolate feito com leite condensado e finalizado com granulado.</p><div class="product-notes"><span class="contains-lactose">Contém lactose</span><span class="vegetarian">Vegetariano</span></div></div><div class="product-action"><strong class="product-price">R$ 7,00</strong><button type="button" class="add-order-item" data-item="Brigadeiro" data-price="7.00">Adicionar</button></div></article>
+                        <article class="order-product"><div class="order-product-info"><h3>Cookie</h3><p class="product-description">Cookie artesanal com gotas de chocolate, assado diariamente.</p><div class="product-notes"><span class="contains-gluten">Contém glúten</span><span class="contains-lactose">Contém lactose</span><span class="vegetarian">Vegetariano</span></div></div><div class="product-action"><strong class="product-price">R$ 8,00</strong><button type="button" class="add-order-item" data-item="Cookie" data-price="8.00">Adicionar</button></div></article>
+                        <article class="order-product"><div class="order-product-info"><h3>Brownie de Cacau sem Glúten</h3><p class="product-description">Brownie intenso feito com cacau e farinha de amêndoas.</p><div class="product-notes"><span class="vegan">Vegano</span><span class="gluten-free">Sem glúten</span></div></div><div class="product-action"><strong class="product-price">R$ 12,00</strong><button type="button" class="add-order-item" data-item="Brownie de Cacau sem Glúten" data-price="12.00">Adicionar</button></div></article>
+                        <article class="order-product"><div class="order-product-info"><h3>Bolo de Banana sem Glúten</h3><p class="product-description">Fatia de bolo de banana e canela feita com farinha de arroz.</p><div class="product-notes"><span class="vegan">Vegano</span><span class="gluten-free">Sem glúten</span></div></div><div class="product-action"><strong class="product-price">R$ 10,00</strong><button type="button" class="add-order-item" data-item="Bolo de Banana sem Glúten" data-price="10.00">Adicionar</button></div></article>
+                    </div>
+                </section>
+                <p class="menu-information-notice">Descrições, classificações e avisos são ilustrativos para este portfólio fictício. Pode haver contato cruzado entre ingredientes; os selos “Sem glúten” não garantem ausência de contaminação cruzada. Se você tem alergia ou restrição alimentar, confirme os ingredientes e o preparo antes de pedir.</p>
+            </div>
+
+            <aside class="order-cart" id="pedido" aria-labelledby="order-cart-title">
+                <h2 id="order-cart-title">Seu pedido</h2>
+                <p id="service-summary" class="service-summary">Escolha como quer receber seu pedido.</p>
+                <p id="empty-order">Seu pedido ainda está vazio.</p>
+                <ul id="order-items" aria-live="polite"></ul>
+                <div class="order-delivery-fee" id="delivery-fee-row" hidden>
+                    <span>Taxa de entrega</span>
+                    <strong id="delivery-fee">R$ 5,00</strong>
+                </div>
+                <div class="order-total"><span>Total</span><strong id="order-total">R$ 0,00</strong></div>
+                <button type="button" id="finish-order">Concluir pedido</button>
+                <p id="order-status" class="order-status" aria-live="polite"></p>
+                <p class="order-disclaimer">Demonstração fictícia: nenhum pedido será enviado.</p>
+            </aside>
+        </div>
+    </main>
+
+    <dialog class="order-confirmation" id="order-confirmation" aria-labelledby="confirmation-title">
+        <div class="confirmation-card">
+            <p class="confirmation-eyebrow">PAUSA CAFÉ</p>
+            <h2 id="confirmation-title">Obrigada por montar seu pedido!</h2>
+            <p>Este site é fictício e faz parte de um portfólio. Obrigada por visitar =)</p>
+            <button type="button" id="close-order-confirmation">Fechar</button>
+        </div>
+    </dialog>
+
+    <footer><p>© 2026 Pausa Café · Projeto fictício</p></footer>
+    <script src="assets/js/script.js"></script>
+</body>
+
+</html>
